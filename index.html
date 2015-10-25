@@ -19,9 +19,16 @@
         <input type="text" ng-model="listCtrl.toDoText">
         <button class="btn" ng-click="listCtrl.addToDo()">Add to do</button>
       </form>
+      <p> Items: {{listCtrl.countItemsToDo()}} / {{listCtrl.countItems()}}</p>
       <ul class="list-group">
         <li ng-repeat="item in listCtrl.toDoList.items">
-          <div class = "toDo-{{item.done}}"><input type="checkbox" ng-model="item.done"> {{item.text}} </div>
+          <div class = "toDo-{{item.done}}">
+            <input type="checkbox" ng-model="item.done">
+            <button class="btn" ng-click="listCtrl.editItem($index)">Edit</button>
+            <button class="btn" ng-click="listCtrl.deleteItem($index)">Delete</button>
+            {{item.text}}
+
+          </div>
         </li>
       </ul>
     </div>
