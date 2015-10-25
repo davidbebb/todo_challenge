@@ -17,8 +17,10 @@ describe('ToDo', function() {
     expect(ctrl.toDoList.items[0].text).toContain('Test todo');
   });
 
-  xit('adds items to the do to list', function() {
-
+  it('stores status of tasks', function() {
+    ctrl.toDoText = 'Test todo';
+    ctrl.addToDo();
+    expect(ctrl.toDoList.items[0].done).toBe(false);
   });
 
 });

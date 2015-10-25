@@ -20,7 +20,7 @@
       </form>
       <ul class="list-group">
         <li ng-repeat="item in listCtrl.toDoList.items">
-          <p>{{item.text}}</p>
+          <p><input type="checkbox" ng-model="item.done"> {{item.text}} </p>
         </li>
       </ul>
     </div>
