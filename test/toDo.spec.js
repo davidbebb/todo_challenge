@@ -11,8 +11,10 @@ describe('ToDo', function() {
     expect(ctrl.toDoText).toBeUndefined();
   });
 
-  xit('adds items to the do to list', function() {
-
+  it('adds items to the do to list', function() {
+    ctrl.toDoText = 'Test todo';
+    ctrl.addToDo();
+    expect(ctrl.toDoList.items[0].text).toContain('Test todo');
   });
 
   xit('adds items to the do to list', function() {
