@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>To do list</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/list.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -20,7 +21,7 @@
       </form>
       <ul class="list-group">
         <li ng-repeat="item in listCtrl.toDoList.items">
-          <p><input type="checkbox" ng-model="item.done"> {{item.text}} </p>
+          <div class = "toDo-{{item.done}}"><input type="checkbox" ng-model="item.done"> {{item.text}} </div>
         </li>
       </ul>
     </div>
