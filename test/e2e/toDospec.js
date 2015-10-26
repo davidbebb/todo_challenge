@@ -17,4 +17,19 @@ describe('todo list', function() {
     var completedAmount = element.all(by.css('.toDo-true'));
     expect(completedAmount.count()).toEqual(1);
   });
+
+  it('should be able to delete an entry', function() {
+    var todoList = element.all(by.repeater('item in listCtrl.toDoList.items'));
+    todoList.get(0).element(by.css('[ng-click="listCtrl.deleteItem($index)"]')).click();
+    expect(todoList.count()).toEqual(0);
+  });
+
+  it('should be able to edit an entry', function() {
+    var todoList = element.all(by.repeater('item in listCtrl.toDoList.items'));
+    todoList.get(0).element(by.css('[ng-click="listCtrl.editItem($index)"]')).click();
+    expect(todoList.count()).toEqual(0);
+    element(by.css('[ng-click="listCtrl.addToDo()"]')).click();
+    expect(todoList.get(0).getText()).toEqual('Edit Delete write first protractor test');
+  });
+
 });
