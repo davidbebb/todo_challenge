@@ -21,7 +21,7 @@ Build a Todo list as a mini front-end application. You don't have to use a datab
 - Karma
 
 ## User stories
-
+```
 As a forgetful person
 I want to store my tasks
 So that I don't forget them
